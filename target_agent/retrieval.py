@@ -16,12 +16,12 @@ def tokenize(text: str) -> set[str]:
 
 
 def load_corpus() -> dict[str, str]:
-    """Read {fielname: article text} for every .md file in the corpus"""
+    """Read {filename: article text} for every .md file in the corpus"""
     return {path.name: path.read_text() for path in sorted(CORPUS_DIR.glob("*.md"))}
 
 
 def retrieve(question: str, k: int = 2) -> list[str]:
-    """Return the text of teh k articles that share the most words with the question."""
+    """Return the text of the k articles that share the most words with the question."""
     question_words = tokenize(question)
     scored = []
     for name, text in load_corpus().items():
