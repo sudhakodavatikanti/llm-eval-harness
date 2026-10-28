@@ -1,4 +1,5 @@
 from target_agent.adapter import client, FALLBACK_ANSWER, run_agent
+from types import SimpleNamespace 
 
 
 def test_fallback(monkeypatch) -> None:
@@ -11,8 +12,6 @@ def test_fallback(monkeypatch) -> None:
     assert response['answer'] == FALLBACK_ANSWER
     assert response['retrieval_context'] == []
 
-
-from types import SimpleNamespace          # ← add at the top of the file, with the other imports
 
 
 def test_run_agent_contract(monkeypatch) -> None:
