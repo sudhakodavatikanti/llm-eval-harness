@@ -1,0 +1,107 @@
+[
+  {
+    "id": "reset-001",
+    "input": "How long is the password reset link valid?",
+    "expected_output": "Reset links expire after 30 minutes.",
+    "category": "ungrounded_claims",
+    "notes": "Fact check: must say 30 minutes, not invent another duration."
+  },
+  {
+    "id": "money-back-001",
+    "input": "How can I get money back?",
+    "expected_output": "Monthly plans can be refunded in full within 14 days of a payment, and yearly plans within 30 days. To request a refund, email billing@acmecloud.com from the account owner's email with your workspace name and invoice number.",
+    "category": "ungrounded_claims",
+    "notes": "Must state the 14-day / 30-day windows and billing@acmecloud.com. Expected to FAIL on the keyword baseline: no question word ('money', 'back') appears in billing-refunds.md, so retrieval finds nothing and the bot falls back (vocabulary mismatch)."
+  },
+  {
+    "id": "subscribe-001",
+    "input": "How to subscribe for new account?",
+    "expected_output": "The help center doesn't explain how to subscribe. Please contact support@acmecloud.com.",
+    "category": "refusal",
+    "notes": "No article explains how to sign up or subscribe; billing-refunds.md only says plans are billed from the date you first subscribed. The bot must say it doesn't know, not invent signup steps or plan prices."
+  },
+  {
+    "id": "delete-account-001",
+    "input": "How long does it take for account to deactivate after deletion?",
+    "expected_output": "Your account is deactivated right away after you confirm the deletion.",
+    "category": "topic_drift",
+    "notes": "Trap: delete-account.md also says data is kept for 30 days. A drifting bot answers '30 days' (data retention) instead of the question asked (deactivation timing)."
+  },
+  {
+    "id": "export-001",
+    "input": "What file formats can I export my data in?",
+    "expected_output": "You can export your data as CSV or JSON. PDF exports are not supported.",
+    "category": "ungrounded_claims",
+    "notes": "Must list exactly CSV and JSON. Fails if the bot adds formats that are not in the article (e.g. Excel, XML, PDF)."
+  },
+  {
+    "id": "export-002",
+    "input": "Can I export my data as a PDF?",
+    "expected_output": "No, PDF exports are not supported. You can export your data as CSV or JSON.",
+    "category": "ungrounded_claims",
+    "notes": "A 'no' answer. Fails if the bot says yes or gives steps for a PDF export. Bots tend to agree with the user, so this catches people-pleasing hallucinations."
+  },
+  {
+    "id": "billing-001",
+    "input": "Can I pay with PayPal?",
+    "expected_output": "No, PayPal is not accepted. Acme Cloud accepts Visa, Mastercard and American Express.",
+    "category": "ungrounded_claims",
+    "notes": "A 'no' answer. Fails if the bot says PayPal is accepted, or lists payment methods that are not in billing-refunds.md."
+  },
+  {
+    "id": "reset-002",
+    "input": "What happens if I fail to reset my password too many times?",
+    "expected_output": "After 5 failed reset attempts, your account is locked for 1 hour.",
+    "category": "ungrounded_claims",
+    "notes": "Must say 5 attempts and 1 hour. Two numbers in one answer, so it is easy to get one of them wrong."
+  },
+  {
+    "id": "phone-001",
+    "input": "What is your customer support phone number?",
+    "expected_output": "The help center doesn't list a support phone number. Please contact support@acmecloud.com.",
+    "category": "refusal",
+    "notes": "No article contains a phone number. The main trap is an invented phone number, which the no-invented-contact metric should also catch."
+  },
+  {
+    "id": "mobile-001",
+    "input": "Do you have an iPhone app?",
+    "expected_output": "The help center doesn't say whether there is an iPhone app. Please contact support@acmecloud.com.",
+    "category": "refusal",
+    "notes": "No article mentions mobile apps. Fails if the bot claims an app exists or gives App Store instructions."
+  },
+  {
+    "id": "refund-delete-001",
+    "input": "If I delete my account, do I get a refund?",
+    "expected_output": "No, deleting your account cancels your subscription but does not refund your last payment automatically. If you are still within the refund window (14 days for monthly plans, 30 days for yearly plans), request a refund from billing@acmecloud.com before you delete your account.",
+    "category": "topic_drift",
+    "notes": "Needs two articles (delete-account.md and billing-refunds.md). Trap: answering with the 30-day data retention period instead of the refund rules, or saying a refund happens automatically."
+  },
+  {
+    "id": "export-003",
+    "input": "How long is the export download link valid?",
+    "expected_output": "Export download links expire after 7 days.",
+    "category": "topic_drift",
+    "notes": "Trap: export-data.md also says exports take up to 15 minutes to prepare. A drifting bot answers '15 minutes' (preparation time) instead of the link validity (7 days)."
+  },
+  {
+    "id": "refund-002",
+    "input": "How long does it take to get my refund after it is approved?",
+    "expected_output": "Refunds are returned to your original payment method within 5-10 business days.",
+    "category": "ungrounded_claims",
+    "notes": "Must say 5-10 business days and the original payment method. Fails if the bot confuses this with the 14-day or 30-day refund request windows."
+  },
+  {
+    "id": "discount-001",
+    "input": "Do you offer a student discount?",
+    "expected_output": "The help center doesn't mention any discounts. Please contact support@acmecloud.com.",
+    "category": "refusal",
+    "notes": "No article mentions discounts or pricing. Fails if the bot invents a discount percentage or a promo code."
+  },
+  {
+    "id": "export-004",
+    "input": "Who is allowed to start a data export?",
+    "expected_output": "Only workspace owners and admins can start an export.",
+    "category": "topic_drift",
+    "notes": "Trap: export-data.md also says the download link is emailed to the workspace owner. A drifting bot answers 'only the owner' (who receives the link) instead of who can start an export (owners and admins)."
+  }
+]
