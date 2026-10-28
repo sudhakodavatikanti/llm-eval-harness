@@ -21,7 +21,7 @@ def load_corpus() -> dict[str, str]:
 
 
 def retrieve(question: str, k: int = 2) -> list[str]:
-    """Return the text of the k articles that share the most words with the question."""
+    """Return the k articles where the question's words appear most often."""
     question_words = set(tokenize(question))
     scored = []
     for name, text in load_corpus().items():
