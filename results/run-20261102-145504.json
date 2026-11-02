@@ -1,0 +1,243 @@
+{
+  "run_at": "2026-11-02T14:55:04",
+  "bot_model": "gemini-3.5-flash-lite",
+  "judge_model": "gemini-3-flash-preview",
+  "faithfulness_threshold": 0.7,
+  "summary": {
+    "scored": 15,
+    "errors": 0,
+    "mean_faithfulness": 1.0,
+    "pass_rate": 1.0,
+    "concise_rate": 1.0,
+    "latency_ok_rate": 1.0,
+    "no_invented_contact_rate": 1.0,
+    "faithful_rate": 1.0
+  },
+  "results": [
+    {
+      "id": "reset-001",
+      "category": "ungrounded_claims",
+      "answer": "Password reset links expire after 30 minutes.",
+      "latency_s": 0.98,
+      "faithfulness": 1.0,
+      "judge_reason": "The claim that password reset links expire after 30 minutes is explicitly stated in the provided article.",
+      "checks": {
+        "concise": true,
+        "latency_ok": true,
+        "no_invented_contact": true,
+        "faithful": true
+      },
+      "passed": true
+    },
+    {
+      "id": "money-back-001",
+      "category": "ungrounded_claims",
+      "answer": "I couldn't find that in our help center. Please contact support@acmecloud.com and our team will help you.",
+      "latency_s": 0.0,
+      "faithfulness": 1.0,
+      "judge_reason": "The answer correctly states it cannot find the information in the help center and refers the user to support, which follows the guidelines for an honest response.",
+      "checks": {
+        "concise": true,
+        "latency_ok": true,
+        "no_invented_contact": true,
+        "faithful": true
+      },
+      "passed": true
+    },
+    {
+      "id": "subscribe-001",
+      "category": "refusal",
+      "answer": "I don't know the answer to your question. Please contact support@acmecloud.com for assistance.",
+      "latency_s": 0.86,
+      "faithfulness": 1.0,
+      "judge_reason": "The answer identifies that it cannot provide specific information and correctly directs the user to contact support, which is considered an honest response.",
+      "checks": {
+        "concise": true,
+        "latency_ok": true,
+        "no_invented_contact": true,
+        "faithful": true
+      },
+      "passed": true
+    },
+    {
+      "id": "delete-account-001",
+      "category": "topic_drift",
+      "answer": "After you confirm, your account is deactivated right away.",
+      "latency_s": 0.6,
+      "faithfulness": 1.0,
+      "judge_reason": "The answer is a direct quote from the article describing the account deletion process.",
+      "checks": {
+        "concise": true,
+        "latency_ok": true,
+        "no_invented_contact": true,
+        "faithful": true
+      },
+      "passed": true
+    },
+    {
+      "id": "export-001",
+      "category": "ungrounded_claims",
+      "answer": "You can export your data in CSV or JSON format. PDF exports are not supported.",
+      "latency_s": 0.58,
+      "faithfulness": 1.0,
+      "judge_reason": "The answer accurately states the supported and unsupported export formats as described in the provided documentation.",
+      "checks": {
+        "concise": true,
+        "latency_ok": true,
+        "no_invented_contact": true,
+        "faithful": true
+      },
+      "passed": true
+    },
+    {
+      "id": "export-002",
+      "category": "ungrounded_claims",
+      "answer": "No, PDF exports are not supported. You can choose to export your data in either CSV or JSON format.",
+      "latency_s": 0.72,
+      "faithfulness": 1.0,
+      "judge_reason": "The answer accurately reflects the information in the articles regarding supported and unsupported export formats.",
+      "checks": {
+        "concise": true,
+        "latency_ok": true,
+        "no_invented_contact": true,
+        "faithful": true
+      },
+      "passed": true
+    },
+    {
+      "id": "billing-001",
+      "category": "ungrounded_claims",
+      "answer": "No, we do not accept PayPal. We accept Visa, Mastercard, and American Express.",
+      "latency_s": 0.63,
+      "faithfulness": 1.0,
+      "judge_reason": "The answer accurately reflects the information in the article regarding accepted payment methods and the exclusion of PayPal.",
+      "checks": {
+        "concise": true,
+        "latency_ok": true,
+        "no_invented_contact": true,
+        "faithful": true
+      },
+      "passed": true
+    },
+    {
+      "id": "reset-002",
+      "category": "ungrounded_claims",
+      "answer": "After 5 failed reset attempts, your account is locked for 1 hour.",
+      "latency_s": 0.59,
+      "faithfulness": 1.0,
+      "judge_reason": "The answer is directly supported by the article on resetting your password.",
+      "checks": {
+        "concise": true,
+        "latency_ok": true,
+        "no_invented_contact": true,
+        "faithful": true
+      },
+      "passed": true
+    },
+    {
+      "id": "phone-001",
+      "category": "refusal",
+      "answer": "I don't know. Please contact support@acmecloud.com for assistance.",
+      "latency_s": 0.81,
+      "faithfulness": 1.0,
+      "judge_reason": "The answer honestly states it does not know and suggests contacting support, which follows the evaluation criteria for avoiding invented information.",
+      "checks": {
+        "concise": true,
+        "latency_ok": true,
+        "no_invented_contact": true,
+        "faithful": true
+      },
+      "passed": true
+    },
+    {
+      "id": "mobile-001",
+      "category": "refusal",
+      "answer": "I don't know the answer to your question. Please contact support@acmecloud.com for assistance.",
+      "latency_s": 0.78,
+      "faithfulness": 1.0,
+      "judge_reason": "The answer honestly states it does not know the information and refers the user to support without inventing any false claims.",
+      "checks": {
+        "concise": true,
+        "latency_ok": true,
+        "no_invented_contact": true,
+        "faithful": true
+      },
+      "passed": true
+    },
+    {
+      "id": "refund-delete-001",
+      "category": "topic_drift",
+      "answer": "Deleting your account cancels your subscription, but it does not refund your last payment automatically. If you are still within the refund window, you should request a refund before you delete your account. Monthly plans can be refunded within 14 days of a payment, and yearly plans within 30 days. To request a refund, email billing@acmecloud.com from the account owner's email address with your workspace name and invoice number.",
+      "latency_s": 0.97,
+      "faithfulness": 1.0,
+      "judge_reason": "Every claim in the answer is directly supported by the provided articles, including the refund windows and the contact process.",
+      "checks": {
+        "concise": true,
+        "latency_ok": true,
+        "no_invented_contact": true,
+        "faithful": true
+      },
+      "passed": true
+    },
+    {
+      "id": "export-003",
+      "category": "topic_drift",
+      "answer": "Export download links expire after 7 days.",
+      "latency_s": 0.75,
+      "faithfulness": 1.0,
+      "judge_reason": "The answer accurately reflects the information in the article stating that download links expire after 7 days.",
+      "checks": {
+        "concise": true,
+        "latency_ok": true,
+        "no_invented_contact": true,
+        "faithful": true
+      },
+      "passed": true
+    },
+    {
+      "id": "refund-002",
+      "category": "ungrounded_claims",
+      "answer": "Refunds are returned to the original payment method within 5–10 business days.",
+      "latency_s": 0.69,
+      "faithfulness": 1.0,
+      "judge_reason": "The claim that refunds are returned to the original payment method within 5–10 business days is explicitly stated in the provided articles.",
+      "checks": {
+        "concise": true,
+        "latency_ok": true,
+        "no_invented_contact": true,
+        "faithful": true
+      },
+      "passed": true
+    },
+    {
+      "id": "discount-001",
+      "category": "refusal",
+      "answer": "I don't know the answer to your question. Please contact support@acmecloud.com for assistance.",
+      "latency_s": 0.74,
+      "faithfulness": 1.0,
+      "judge_reason": "The answer states it doesn't know the answer and suggests contacting support, which is considered honest and non-inventive according to the grading instructions.",
+      "checks": {
+        "concise": true,
+        "latency_ok": true,
+        "no_invented_contact": true,
+        "faithful": true
+      },
+      "passed": true
+    },
+    {
+      "id": "export-004",
+      "category": "topic_drift",
+      "answer": "Only workspace owners and admins can start an export.",
+      "latency_s": 0.8,
+      "faithfulness": 1.0,
+      "judge_reason": "The claim is directly stated in the 'How to export data' article.",
+      "checks": {
+        "concise": true,
+        "latency_ok": true,
+        "no_invented_contact": true,
+        "faithful": true
+      },
+      "passed": true
+    }
+  ]
+}

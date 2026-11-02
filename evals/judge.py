@@ -1,5 +1,10 @@
-import json      
-from target_agent.adapter import MODEL, client         
+import json
+import os
+
+from target_agent.adapter import client
+
+# A different model from the bot's, so the judge isn't grading its own model's answers (self-preference bias).
+JUDGE_MODEL = os.environ["JUDGE_MODEL"]
 
 FAITHFULNESS_PROMPT = """You are grading a customer support bot's answer.
 
@@ -21,7 +26,7 @@ def judge_faithfulness(answer: str, retrieval_context: list[str]) -> dict:
     """Ask the LLM judge whether every claim in the answer is supported by the articles."""
     articles = "\n\n---\n\n".join(retrieval_context)
     response = client.chat.completions.create(
-        model=MODEL,
+        model=JUDGE_MODEL,
         messages=[
             {"role": "system", "content": FAITHFULNESS_PROMPT},                                    
             {"role": "user", "content": f"ARTICLES:\n{articles}\n\nANSWER:\n{answer}"},

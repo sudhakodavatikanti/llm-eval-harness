@@ -6,3 +6,4 @@ import os
 os.environ.setdefault("GEMINI_API_KEY", "test-key-not-real")
 os.environ.setdefault("LLM_BASE_URL", "http://localhost/not-a-real-llm")
 os.environ.setdefault("LLM_MODEL", "fake-model")
+os.environ.setdefault("JUDGE_MODEL", "fake-judge-model")

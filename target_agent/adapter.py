@@ -12,6 +12,8 @@ client = OpenAI(
     api_key=os.environ["GEMINI_API_KEY"],
     base_url=os.environ["LLM_BASE_URL"],
     max_retries=5,
+    # Without a timeout, a hung model plus 5 retries can stall one request for ~10 minutes.
+    timeout=60,
 )
 MODEL = os.environ["LLM_MODEL"]
 
